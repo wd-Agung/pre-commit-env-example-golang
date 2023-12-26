@@ -20,7 +20,6 @@ fi
 
 # Extract lines containing 'env' and 'envDefault' tags
 grep -o 'env:"[^"]*"\(\s\+envDefault:"[^"]*"\)\?' "$CONFIG_FILE" | while read -r line ; do
-    echo "$line"
     # Extract the environment variable name and default value
     ENV_VAR=$(echo "$line" | grep -o 'env:"[^"]*"' | cut -d '"' -f 2)
     DEFAULT_VALUE=$(echo "$line" | grep -o 'envDefault:"[^"]*"' | cut -d '"' -f 2)
