@@ -2,4 +2,5 @@
     name: 'go-env-example'
     entry: run-hook.sh
     language: 'script'
+    files: '^config\.go$'
     description: "Pre-commit hook creating .env_example for Golang"
