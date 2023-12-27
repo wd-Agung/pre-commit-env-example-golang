@@ -24,7 +24,7 @@ grep -o 'env:"[^"]*"\(\s\+envDefault:"[^"]*"\)\?' "$CONFIG_FILE" | while read -r
     ENV_VAR=$(echo "$line" | grep -o 'env:"[^"]*"' | cut -d '"' -f 2)
     DEFAULT_VALUE=$(echo "$line" | grep -o 'envDefault:"[^"]*"' | cut -d '"' -f 2)
 
-    # Write to the .env file
+    # Write to the .env_example file
     echo "$ENV_VAR=$DEFAULT_VALUE" >> "$ENV_FILE"
 done
 
