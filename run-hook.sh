@@ -28,4 +28,6 @@ grep -o 'env:"[^"]*"\(\s\+envDefault:"[^"]*"\)\?' "$CONFIG_FILE" | while read -r
     echo "$ENV_VAR=$DEFAULT_VALUE" >> "$ENV_FILE"
 done
 
+touch -m "$ENV_FILE"
+
 echo ".env_example file has been created successfully."
